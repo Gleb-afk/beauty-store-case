@@ -33,3 +33,36 @@ favoriteButtons.forEach((button) => {
     );
   });
 });
+
+const volumeButtons = document.querySelectorAll("[data-volume]");
+const featuredPrice = document.querySelector("[data-featured-price]");
+const featuredAddButton = document.querySelector("[data-featured-add]");
+
+volumeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    volumeButtons.forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-pressed", "false");
+    });
+
+    button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
+
+    featuredPrice.textContent = button.dataset.price;
+  });
+});
+
+featuredAddButton.addEventListener("click", () => {
+  cartItemsCount += 1;
+  cartCounter.textContent = cartItemsCount;
+
+  const originalText = featuredAddButton.textContent;
+
+  featuredAddButton.textContent = "Товар добавлен";
+  featuredAddButton.disabled = true;
+
+  setTimeout(() => {
+    featuredAddButton.textContent = originalText;
+    featuredAddButton.disabled = false;
+  }, 1000);
+});
