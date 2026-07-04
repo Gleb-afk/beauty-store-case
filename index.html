@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="ÉLANE — профессиональный уход за волосами для домашнего использования."
+    />
+
+    <title>ÉLANE — профессиональный уход за волосами</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="#" aria-label="ÉLANE — главная страница">
+          ÉLANE
+        </a>
+
+        <nav class="navigation" aria-label="Основная навигация">
+          <a class="navigation__link" href="#catalog">Каталог</a>
+          <a class="navigation__link" href="#about">О бренде</a>
+          <a class="navigation__link" href="#ingredients">Компоненты</a>
+          <a class="navigation__link" href="#delivery">Доставка</a>
+        </nav>
+
+        <div class="header__actions">
+          <button class="icon-button" type="button" aria-label="Поиск">
+            <span aria-hidden="true">⌕</span>
+          </button>
+
+          <button class="cart-button" type="button">
+            Корзина
+            <span class="cart-button__counter">0</span>
+          </button>
+
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Профессиональная линия ухода</p>
+
+            <h1 class="hero__title">Волосы, к которым хочется прикасаться</h1>
+
+            <p class="hero__description">
+              Продуманные формулы для увлажнения, восстановления и естественного
+              блеска без ощущения тяжести.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#catalog">
+                Смотреть коллекцию
+              </a>
+
+              <a class="button button--secondary" href="#about">
+                Узнать о бренде
+              </a>
+            </div>
+
+            <ul class="hero__benefits">
+              <li>Без силиконов</li>
+              <li>Профессиональные формулы</li>
+              <li>Бережный уход</li>
+            </ul>
+          </div>
+
+          <div class="hero__visual" aria-label="Коллекция ухода ÉLANE">
+            <div class="hero__circle"></div>
+
+            <div class="product product--back">
+              <div class="product__cap"></div>
+              <div class="product__label">
+                <span>ÉLANE</span>
+                <small>RESTORE</small>
+              </div>
+            </div>
+
+            <div class="product product--front">
+              <div class="product__pump">
+                <span></span>
+              </div>
+
+              <div class="product__label">
+                <span>ÉLANE</span>
+                <small>MOISTURE</small>
+                <p>Hair Treatment</p>
+              </div>
+            </div>
+
+            <div class="hero__note">
+              <span class="hero__note-number">01</span>
+              <span>Увлажнение и мягкость с первого применения</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog" id="catalog">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-heading__eyebrow">Коллекция ÉLANE</p>
+              <h2 class="section-heading__title">
+                Уход для каждого типа волос
+              </h2>
+            </div>
+
+            <a class="section-heading__link" href="#">
+              Смотреть весь каталог
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="catalog__grid">
+            <article class="product-card">
+              <button
+                class="product-card__favorite"
+                type="button"
+                aria-label="Добавить в избранное"
+              >
+                ♡
+              </button>
+
+              <div class="product-card__visual product-card__visual--brown">
+                <span class="product-card__badge">Bestseller</span>
+
+                <div class="product-card__bottle product-card__bottle--pump">
+                  <span class="product-card__brand">ÉLANE</span>
+                  <span class="product-card__line">Moisture</span>
+                  <small>Shampoo</small>
+                </div>
+              </div>
+
+              <div class="product-card__content">
+                <div>
+                  <p class="product-card__category">Увлажнение</p>
+                  <h3 class="product-card__title">Moisture Balance Shampoo</h3>
+                </div>
+
+                <p class="product-card__description">
+                  Мягкое очищение и поддержание естественного блеска.
+                </p>
+
+                <div class="product-card__footer">
+                  <span class="product-card__price">2 490 ₽</span>
+
+                  <button
+                    class="product-card__add"
+                    type="button"
+                    data-add-to-cart
+                    aria-label="Добавить Moisture Balance Shampoo в корзину"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <button
+                class="product-card__favorite"
+                type="button"
+                aria-label="Добавить в избранное"
+              >
+                ♡
+              </button>
+
+              <div class="product-card__visual product-card__visual--cream">
+                <span class="product-card__badge">New</span>
+
+                <div class="product-card__bottle product-card__bottle--cap">
+                  <span class="product-card__brand">ÉLANE</span>
+                  <span class="product-card__line">Restore</span>
+                  <small>Conditioner</small>
+                </div>
+              </div>
+
+              <div class="product-card__content">
+                <div>
+                  <p class="product-card__category">Восстановление</p>
+                  <h3 class="product-card__title">Restore Silk Conditioner</h3>
+                </div>
+
+                <p class="product-card__description">
+                  Гладкость, мягкость и лёгкое расчёсывание без утяжеления.
+                </p>
+
+                <div class="product-card__footer">
+                  <span class="product-card__price">2 690 ₽</span>
+
+                  <button
+                    class="product-card__add"
+                    type="button"
+                    data-add-to-cart
+                    aria-label="Добавить Restore Silk Conditioner в корзину"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <button
+                class="product-card__favorite"
+                type="button"
+                aria-label="Добавить в избранное"
+              >
+                ♡
+              </button>
+
+              <div class="product-card__visual product-card__visual--rose">
+                <div class="product-card__jar">
+                  <span class="product-card__brand">ÉLANE</span>
+                  <span class="product-card__line">Repair</span>
+                  <small>Hair Mask</small>
+                </div>
+              </div>
+
+              <div class="product-card__content">
+                <div>
+                  <p class="product-card__category">Питание</p>
+                  <h3 class="product-card__title">Repair Intensive Mask</h3>
+                </div>
+
+                <p class="product-card__description">
+                  Интенсивный уход для сухих и повреждённых волос.
+                </p>
+
+                <div class="product-card__footer">
+                  <span class="product-card__price">3 190 ₽</span>
+
+                  <button
+                    class="product-card__add"
+                    type="button"
+                    data-add-to-cart
+                    aria-label="Добавить Repair Intensive Mask в корзину"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <button
+                class="product-card__favorite"
+                type="button"
+                aria-label="Добавить в избранное"
+              >
+                ♡
+              </button>
+
+              <div class="product-card__visual product-card__visual--green">
+                <span class="product-card__badge">Limited</span>
+
+                <div class="product-card__bottle product-card__bottle--dropper">
+                  <span class="product-card__brand">ÉLANE</span>
+                  <span class="product-card__line">Botanical</span>
+                  <small>Hair Oil</small>
+                </div>
+              </div>
+
+              <div class="product-card__content">
+                <div>
+                  <p class="product-card__category">Блеск и защита</p>
+                  <h3 class="product-card__title">Botanical Shine Oil</h3>
+                </div>
+
+                <p class="product-card__description">
+                  Лёгкое масло для сияния и защиты кончиков волос.
+                </p>
+
+                <div class="product-card__footer">
+                  <span class="product-card__price">2 290 ₽</span>
+
+                  <button
+                    class="product-card__add"
+                    type="button"
+                    data-add-to-cart
+                    aria-label="Добавить Botanical Shine Oil в корзину"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
