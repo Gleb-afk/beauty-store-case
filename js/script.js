@@ -105,3 +105,34 @@ reviewDots.forEach((dot) => {
     showReview(Number(dot.dataset.reviewDot));
   });
 });
+
+const faqButtons = [...document.querySelectorAll("[data-faq-button]")];
+
+function setFaqState(button, isOpen) {
+  const item = button.closest(".faq__item");
+  const answer = document.getElementById(
+    button.getAttribute("aria-controls"),
+  );
+
+  item.classList.toggle("is-open", isOpen);
+  button.setAttribute("aria-expanded", String(isOpen));
+  answer.setAttribute("aria-hidden", String(!isOpen));
+}
+
+faqButtons.forEach((button) => {
+  const item = button.closest(".faq__item");
+  setFaqState(button, item.classList.contains("is-open"));
+
+  button.addEventListener("click", () => {
+    const currentItem = button.closest(".faq__item");
+    const willOpen = !currentItem.classList.contains("is-open");
+
+    faqButtons.forEach((otherButton) => {
+      setFaqState(otherButton, false);
+    });
+
+    if (willOpen) {
+      setFaqState(button, true);
+    }
+  });
+});
