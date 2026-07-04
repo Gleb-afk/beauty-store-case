@@ -66,3 +66,42 @@ featuredAddButton.addEventListener("click", () => {
     featuredAddButton.disabled = false;
   }, 1000);
 });
+
+const reviewCards = [...document.querySelectorAll("[data-review]")];
+const reviewDots = [...document.querySelectorAll("[data-review-dot]")];
+const reviewPreviousButton = document.querySelector("[data-review-prev]");
+const reviewNextButton = document.querySelector("[data-review-next]");
+
+let activeReviewIndex = 0;
+
+function showReview(index) {
+  activeReviewIndex = (index + reviewCards.length) % reviewCards.length;
+
+  reviewCards.forEach((card, cardIndex) => {
+    const isActive = cardIndex === activeReviewIndex;
+
+    card.hidden = !isActive;
+    card.classList.toggle("is-active", isActive);
+  });
+
+  reviewDots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === activeReviewIndex;
+
+    dot.classList.toggle("is-active", isActive);
+    dot.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+reviewPreviousButton?.addEventListener("click", () => {
+  showReview(activeReviewIndex - 1);
+});
+
+reviewNextButton?.addEventListener("click", () => {
+  showReview(activeReviewIndex + 1);
+});
+
+reviewDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showReview(Number(dot.dataset.reviewDot));
+  });
+});
