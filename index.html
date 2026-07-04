@@ -44,6 +44,8 @@
             type="button"
             aria-label="Открыть меню"
             aria-expanded="false"
+            aria-controls="mobile-navigation"
+            data-menu-button
           >
             <span></span>
             <span></span>
@@ -51,6 +53,50 @@
         </div>
       </div>
     </header>
+
+    <div
+      class="mobile-navigation"
+      id="mobile-navigation"
+      aria-hidden="true"
+      inert
+    >
+      <button
+        class="mobile-navigation__backdrop"
+        type="button"
+        aria-label="Закрыть меню"
+        data-menu-close
+      ></button>
+
+      <div class="mobile-navigation__panel">
+        <div class="mobile-navigation__header">
+          <a class="logo" href="#">ÉLANE</a>
+
+          <button
+            class="mobile-navigation__close"
+            type="button"
+            aria-label="Закрыть меню"
+            data-menu-close
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <nav class="mobile-navigation__links" aria-label="Мобильная навигация">
+          <a href="#catalog">Каталог</a>
+          <a href="#about">Главный продукт</a>
+          <a href="#ingredients">Компоненты</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#delivery">Доставка и вопросы</a>
+        </nav>
+
+        <div class="mobile-navigation__footer">
+          <p>Профессиональный уход для мягкости и естественного блеска.</p>
+
+          <a href="mailto:hello@elane.example"> hello@elane.example </a>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section class="hero">
@@ -897,5 +943,104 @@
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="container">
+        <section class="newsletter" aria-labelledby="newsletter-title">
+          <div class="newsletter__content">
+            <p class="newsletter__eyebrow">Письма ÉLANE</p>
+
+            <h2 class="newsletter__title" id="newsletter-title">
+              Уход начинается с правильных привычек
+            </h2>
+
+            <p class="newsletter__description">
+              Новинки, рекомендации по уходу и специальные предложения без
+              лишних писем.
+            </p>
+          </div>
+
+          <form class="newsletter__form" data-newsletter-form>
+            <label class="newsletter__field">
+              <span class="visually-hidden">Электронная почта</span>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Ваш email"
+                autocomplete="email"
+                required
+              />
+
+              <button type="submit" aria-label="Подписаться">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12h16"></path>
+                  <path d="m14 6 6 6-6 6"></path>
+                </svg>
+              </button>
+            </label>
+
+            <p class="newsletter__agreement">
+              Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.
+            </p>
+
+            <p
+              class="newsletter__status"
+              role="status"
+              aria-live="polite"
+              data-newsletter-status
+            ></p>
+          </form>
+        </section>
+
+        <div class="footer__main">
+          <div class="footer__brand">
+            <a class="footer__logo" href="#">ÉLANE</a>
+
+            <p>
+              Профессиональные формулы для ежедневного домашнего ухода за
+              волосами.
+            </p>
+          </div>
+
+          <div class="footer__column">
+            <h3>Покупателям</h3>
+
+            <a href="#catalog">Каталог</a>
+            <a href="#delivery">Доставка и оплата</a>
+            <a href="#delivery">Возврат</a>
+            <a href="#reviews">Отзывы</a>
+          </div>
+
+          <div class="footer__column">
+            <h3>О бренде</h3>
+
+            <a href="#about">Философия</a>
+            <a href="#ingredients">Компоненты</a>
+            <a href="#">Производство</a>
+            <a href="#">Контакты</a>
+          </div>
+
+          <div class="footer__column">
+            <h3>Связаться</h3>
+
+            <a href="mailto:hello@elane.example"> hello@elane.example </a>
+
+            <a href="tel:+78005553535"> 8 800 555-35-35 </a>
+
+            <p>Ежедневно, 09:00–20:00</p>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 ÉLANE. Учебный концепт интернет-магазина.</p>
+
+          <div>
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Оферта</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

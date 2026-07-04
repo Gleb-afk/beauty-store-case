@@ -136,3 +136,74 @@ faqButtons.forEach((button) => {
     }
   });
 });
+
+const menuButton = document.querySelector("[data-menu-button]");
+const mobileNavigation = document.querySelector(".mobile-navigation");
+const menuCloseButtons = document.querySelectorAll("[data-menu-close]");
+const mobileNavigationLinks = document.querySelectorAll(
+  ".mobile-navigation__links a",
+);
+const mobileNavigationCloseButton = document.querySelector(
+  ".mobile-navigation__close",
+);
+
+function setMobileMenuState(isOpen) {
+  mobileNavigation.classList.toggle("is-open", isOpen);
+  mobileNavigation.setAttribute("aria-hidden", String(!isOpen));
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.setAttribute(
+    "aria-label",
+    isOpen ? "Закрыть меню" : "Открыть меню",
+  );
+
+  document.body.classList.toggle("menu-open", isOpen);
+
+  if (isOpen) {
+    mobileNavigation.removeAttribute("inert");
+    mobileNavigationCloseButton.focus();
+  } else {
+    mobileNavigation.setAttribute("inert", "");
+  }
+}
+
+menuButton?.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  setMobileMenuState(!isOpen);
+});
+
+menuCloseButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setMobileMenuState(false);
+    menuButton.focus();
+  });
+});
+
+mobileNavigationLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    setMobileMenuState(false);
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    mobileNavigation.classList.contains("is-open")
+  ) {
+    setMobileMenuState(false);
+    menuButton.focus();
+  }
+});
+
+const newsletterForm = document.querySelector("[data-newsletter-form]");
+const newsletterStatus = document.querySelector(
+  "[data-newsletter-status]",
+);
+
+newsletterForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  newsletterStatus.textContent =
+    "Спасибо! Вы успешно подписались на письма ÉLANE.";
+
+  newsletterForm.reset();
+});
