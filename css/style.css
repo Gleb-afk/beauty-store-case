@@ -1540,3 +1540,339 @@ a {
     top: 150px;
   }
 }
+
+/* Ingredients */
+
+.ingredients {
+  padding: 120px 0;
+  background: var(--color-light);
+}
+
+.ingredients__layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(60px, 8vw, 120px);
+}
+
+.ingredients__intro {
+  position: sticky;
+  top: 40px;
+}
+
+.ingredients__eyebrow {
+  margin: 0 0 18px;
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.ingredients__title {
+  max-width: 520px;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.ingredients__description {
+  max-width: 480px;
+  margin: 28px 0 0;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.ingredients__note {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 390px;
+  margin-top: 50px;
+  padding: 20px 22px;
+  background: var(--color-background);
+}
+
+.ingredients__note span {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 27px;
+}
+
+.ingredients__note p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ingredient-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.ingredient-card--ceramides {
+  background: #ddd0c2;
+}
+
+.ingredient-card--panthenol {
+  background: #d7d8cf;
+}
+
+.ingredient-card--amino {
+  background: #e3d3cf;
+}
+
+.ingredient-card--oils {
+  background: #c8cec0;
+}
+
+.ingredient-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ingredient-card__number {
+  color: rgba(37, 33, 30, 0.58);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.ingredient-card__symbol {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  border: 1px solid rgba(37, 33, 30, 0.18);
+  border-radius: 50%;
+  transition: transform 350ms ease;
+}
+
+.ingredient-card:hover .ingredient-card__symbol {
+  transform: rotate(12deg) scale(1.04);
+}
+
+.ingredient-card__symbol::before,
+.ingredient-card__symbol::after,
+.ingredient-card__symbol span {
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+.ingredient-card__symbol::before {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(37, 33, 30, 0.55);
+  border-radius: 50%;
+}
+
+.ingredient-card__symbol::after {
+  width: 58px;
+  height: 1px;
+  background: rgba(37, 33, 30, 0.55);
+  transform: rotate(-35deg);
+}
+
+.ingredient-card__symbol span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.ingredient-card--panthenol .ingredient-card__symbol::before {
+  width: 28px;
+  height: 52px;
+  border-radius: 50% 50% 58% 42%;
+  transform: rotate(25deg);
+}
+
+.ingredient-card--panthenol .ingredient-card__symbol::after {
+  width: 1px;
+  height: 58px;
+  transform: rotate(25deg);
+}
+
+.ingredient-card--amino .ingredient-card__symbol::before {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+.ingredient-card--amino .ingredient-card__symbol::after {
+  width: 34px;
+  transform: rotate(0deg);
+}
+
+.ingredient-card--oils .ingredient-card__symbol::before {
+  width: 34px;
+  height: 48px;
+  border-radius: 60% 40% 58% 42%;
+  transform: rotate(45deg);
+}
+
+.ingredient-card--oils .ingredient-card__symbol::after {
+  width: 34px;
+  transform: rotate(45deg);
+}
+
+.ingredient-card__content {
+  position: relative;
+  z-index: 2;
+  margin-top: 70px;
+}
+
+.ingredient-card__type {
+  margin: 0 0 10px;
+  color: var(--color-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ingredient-card__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.ingredient-card__description {
+  margin: 18px 0 0;
+  color: rgba(37, 33, 30, 0.68);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1024px) {
+  .ingredients__layout {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .ingredients__intro {
+    position: static;
+  }
+
+  .ingredients__title,
+  .ingredients__description {
+    max-width: 700px;
+  }
+}
+
+/* Небольшие планшеты: две компактные колонки */
+
+@media (max-width: 780px) {
+  .ingredients {
+    padding: 84px 0;
+  }
+
+  .ingredients__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .ingredient-card {
+    min-height: 280px;
+    padding: 22px;
+  }
+
+  .ingredient-card__symbol {
+    width: 72px;
+    height: 72px;
+  }
+
+  .ingredient-card__content {
+    margin-top: 34px;
+  }
+
+  .ingredient-card__title {
+    font-size: 27px;
+  }
+
+  .ingredient-card__description {
+    margin-top: 14px;
+    font-size: 12px;
+  }
+}
+
+/* Телефоны: одна короткая карточка в ряд */
+
+@media (max-width: 560px) {
+  .ingredients__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ingredient-card {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .ingredient-card__symbol {
+    width: 68px;
+    height: 68px;
+  }
+
+  .ingredient-card__content {
+    margin-top: 26px;
+  }
+
+  .ingredient-card__type {
+    margin-bottom: 7px;
+  }
+
+  .ingredient-card__title {
+    font-size: 28px;
+  }
+
+  .ingredient-card__description {
+    margin-top: 12px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 420px) {
+  .ingredients__title {
+    font-size: clamp(40px, 11vw, 50px);
+  }
+
+  .ingredients__note {
+    width: 100%;
+    margin-top: 36px;
+  }
+
+  .ingredient-card {
+    padding: 18px;
+  }
+
+  .ingredient-card__symbol {
+    width: 62px;
+    height: 62px;
+  }
+
+  .ingredient-card__content {
+    margin-top: 22px;
+  }
+}
