@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap");
+
+:root {
+  --color-background: #f4efe8;
+  --color-surface: #e7ddd1;
+  --color-text: #25211e;
+  --color-muted: #716a64;
+  --color-accent: #563d30;
+  --color-light: #fffaf4;
+  --color-border: rgba(37, 33, 30, 0.14);
+  --font-primary: "DM Sans", sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --container-width: 1280px;
+  --container-padding: 32px;
+}
